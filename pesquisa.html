@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesquisa de Livros</title>
+</head>
+<body>
+    <h1>Pesquisa de Livros</h1>
+    <input type="text" id="termo" placeholder="Digite o nome do livro">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <ul id="resultados"></ul>
+
+    <script>
+        function pesquisar() {
+            var termo = document.getElementById("termo").value;
+
+            // Fazer uma requisição AJAX para o arquivo pesquisa.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "pesquisa.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("termo=" + termo);
+        }
+    </script>
+</body>
+</html>

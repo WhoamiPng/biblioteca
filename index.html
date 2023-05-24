@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html lang="py-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Salvar livros - Biblioteca</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <body>
-    <form method="POST" action="inclusao.php">
-        <label for="Id">Digite o Id do livro</label>
-        <input type="text" name="id" required><br>
+    <h1><span class="s1">Biblioteca</span><span class="s2"> Pimentas VII</span><br><span
+            class="material-symbols-outlined">
+            menu_book
+        </span></h1>
+    <div class="conteiner">
+        <form>
+            <br>
+            <input type="text" placeholder="Nome do livro">
+            <br>
+            <input type="text" placeholder="Autor">
+            <br>
 
-        <label for="nomeLivro">Digite o nome do Livro:</label>
-        <input type="text" name="nomeLivro" required><br>
-
-        <label for="autor">Autor:</label>
-        <input type="text" name="autor" required><br>
-
-        <label for="genero">Gênero:</label>
-        <input type="text" name="genero" required><br>
-
-        <label for="qtd">Quantidade:</label>
-        <input type="number" name="qtd" required><br>
-
-        <input type="submit" value="Enviar">
-    </form>
+            <label for=""></label>
+            <br>
+            <input list="generos" placeholder="Gênero">
+            <datalist id="generos">
+                <option value="Literatura Infantil">
+                <option value="Literatura Moderna">
+                <option value="Romance">
+                <option value="Classicos Nacionais">
+                <option value="Estudo do Professor">
+                <option value="Literatura Juvenil">
+            </datalist>
+            <br>
+            <label for=""></label>
+            <br>
+            <input type="number" placeholder="Quantidade">
+            <br><br><br>
+            <div class="botao">
+                <button>Salvar</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
