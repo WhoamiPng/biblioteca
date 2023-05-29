@@ -19,6 +19,7 @@
                 <li><a href="index.html">Inicio -</a></li>
                 <li><a href="emprestimo.html"> Fazer emprestimos</a></li>
                 <li><a href="pesquisa.html"> - Pesquisar por livros</a></li>
+                <li><a href="devolucao.html">- Devolver Livros</a></li>
             </ul>
         </nav>
     </header>
@@ -27,15 +28,15 @@
             menu_book
         </span></h1>
     <div class="conteiner">
-        <form>
+        <form action="inclusao.php" method="post">
             <br>
-            <input type="text" placeholder="Nome do livro">
+            <input type="text" name="nomeLivro" placeholder="Nome do livro">
             <br><br>
-            <input type="text" placeholder="Autor">
+            <input type="text" name="autor" placeholder="Autor">
             <br>
             <label></label>
             <br>
-            <input list="generos" placeholder="Gênero">
+            <input list="generos" name="genero" placeholder="Gênero">
             <datalist id="generos">
                 <option value="Literatura Infantil">
                 <option value="Literatura Moderna">
@@ -47,7 +48,7 @@
             <br>
             <label for=""></label>
             <br>
-            <input type="number" placeholder="Quantidade">
+            <input type="number" name="qtd" placeholder="Quantidade">
             <br><br>
             <div class="botao">
                 <button>Salvar</button>

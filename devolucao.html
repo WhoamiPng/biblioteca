@@ -14,15 +14,13 @@
                 var pessoa = $('#pessoa').val();
                 var ra = $('input[name="ra"]').val();
                 var nomeLivro = $('#nomeLivro').val();
-                var data = $('#data').val();
                 $.ajax({
                     type: 'POST',
-                    url: 'emprestimo.php',
+                    url: 'devolucao.php',
                     data: {
                         pessoa: pessoa,
                         ra: ra,
-                        nomeLivro: nomeLivro,
-                        data: data
+                        nomeLivro: nomeLivro
                     },
                     success: function(response) {
                         alert(response);
@@ -45,9 +43,7 @@
             <input type="text" name="ra"><br>
             <label>Nome do Livro:</label><br>
             <input type="text" name="nomeLivro" id="nomeLivro"><br>
-            <label>Prazo de entrega:</label><br>
-            <input type="date" name="data" id="data"><br>
-            <input type="submit" value="Salvar">
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>
