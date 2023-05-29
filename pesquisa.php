@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
+        echo "<tr style='background-color:#04AA6D'>";
         echo "<th>" . $row["id"] . "</th>";
         echo "<th>" . $row["nomeLivro"] . "</th>";
         echo "<th>" . $row["autor"]  .  "</th>";
