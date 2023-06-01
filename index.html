@@ -23,11 +23,11 @@
     </span></h1>
         <div class="conteiner">
             <form action="php/inclusao.php" method="post">
-                        <input type="text" name="nomeLivro" placeholder="Nome do livro">
+                        <input type="text" name="nomeLivro" placeholder="Nome do livro" required>
                         <br><br>    
-                        <input type="text" name="autor" placeholder="Autor">
+                        <input type="text" name="autor" placeholder="Autor" required>
                         <br><br>
-                        <input list="generos" name="genero" placeholder="Gênero">
+                        <input list="generos" name="genero" placeholder="Gênero" required>
                     <datalist id="generos">
                         <option value="Literatura Infantil">
                         <option value="Literatura Moderna">
@@ -37,7 +37,7 @@
                         <option value="Literatura Juvenil">
                     </datalist>
                         <br><br>
-                        <input type="number" name="qtd" placeholder="Quantidade">
+                        <input type="number" name="qtd" placeholder="Quantidade" required>
                         <br><br>
                 <div class="botao">
                     <button onclick="enviarLivro()">Salvar</button>

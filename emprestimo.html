@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emprestimo de livros</title>
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/emprestimo.css">
 </head>
+
 <body>
     <header>
         <div id="headerContainer"></div>
     </header>
-    <form action="php/emprestimo.php" method="post">
-        <label>Nome do comodato:</label><br>
-        <input type="text" name="pessoa" id="pessoa"><br>
-        <label>Nome do Livro:</label><br>
-        <input type="text" name="nomeLivro" id="nomeLivro"><br>
-        <label>Prazo de entrega:</label><br>
-        <input type="date" name="data" id="data"><br>
-        <input type="submit" value="Salvar">
-    </form>
-    <table>
-        <thead>
-            <tr style="background-color: rgb(251, 88, 88);">
-                <th>ID</th>
-                <th>Livro</th>
-                <th>Pessoa</th>
-                <th>D.Emprestado</th>
-                <th>D.Prazo</th>
-            </tr>
-        </thead>
-        <tbody id="resultados">
-            
-        </tbody>
-    </table>
+    <div class="container">
+        <form action="php/emprestimo.php" method="post">
+            <label>Nome do comodato:</label><br>
+            <input type="text" name="pessoa" id="pessoa"><br>
+            <label>Nome do Livro:</label><br>
+            <input type="text" name="nomeLivro" id="nomeLivro"><br>
+            <label>Prazo de entrega:</label><br>
+            <input type="date" name="data" id="data"><br>
+            <input type="submit" value="Salvar">
+        </form>
+        <table>
+            <thead>
+                <tr style="background-color: rgb(251, 88, 88);">
+                    <th>ID</th>
+                    <th>Livro</th>
+                    <th>Pessoa</th>
+                    <th>Data Emprestado</th>
+                    <th>Data Prazo</th>
+                </tr>
+            </thead>
+            <tbody id="resultados">
+
+            </tbody>
+        </table>
+    </div>
     <script>
         function historico() {
             var termo = 'emprestimo';
-            
+
             // Fazer uma requisição AJAX para o arquivo pesquisa.php
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "php/historico.php", true);
@@ -54,4 +59,5 @@
     </script>
     <script src="scripts/header.js"></script>
 </body>
+
 </html>
