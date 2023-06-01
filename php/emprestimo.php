@@ -24,15 +24,18 @@
             $sql = "UPDATE livros SET qtd= qtd-1 WHERE nomeLivro='".$nomeLivro."'";
 
             if(mysqli_query($conn,$sql)){
-                echo "Emprestimo efetuado com sucesso";
+                echo "<p style='font-size:40px'>Livro não existe, redirecionando para página inicial em 5 segundos</p>";
+                header("Refresh: 5; URL= ../emprestimo.html");
             }else{
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                echo "<p style='font-size:40px'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
+                header("Refresh: 5; URL= ../emprestimo.html");
             }
         }else{
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-
+            echo "<p style='font-size:40px'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
+            header("Refresh: 5; URL= ../emprestimo.html");
         }
     }else{
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+        echo "<p style='font-size:40px'>Livro não existe, redirecionando para página inicial em 5 segundos</p>";
+        header("Refresh: 5; URL= ../emprestimo.html");
     }
 ?>
