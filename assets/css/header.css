@@ -1,0 +1,30 @@
+.navbar {
+    width: 50%;
+    margin: auto;
+    height: 50px;
+    display:flex;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    justify-content: center;
+}
+.list-itens {
+    height: 10%;
+    display: flex;
+    margin: auto;
+}
+
+.list-itens li {
+    list-style: none;
+}
+.list-itens li a {
+    margin-left: 10px;
+    color:  black;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.list-itens li > a:hover{
+    color: rgb(0, 38, 255);
+    transition: 500ms;
+}
