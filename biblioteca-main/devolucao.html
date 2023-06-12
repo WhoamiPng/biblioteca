@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devolucao de livro</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+
+        <label>Comodato</label>
+        <input type="text" name="pessoa" id="pessoa">
+        <button type="button-event" onclick="pesquisar()">Salvar</button>
+
+
+    <table>
+        <tbody id="resultados">
+            
+        </tbody>
+    </table>
+    <script>
+        function historico() {
+            var termo = 'devolucao';
+            
+            // Fazer uma requisição AJAX para o arquivo historico.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/historico.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("termo=" + termo);
+        }
+
+        function pesquisar() {
+            var nome = document.getElementById("pessoa").value;
+            
+            // Fazer uma requisição AJAX para o arquivo pesquisa.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/devolver.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("pessoa=" + nome);
+        }
+
+        function devolver(id) {
+        
+            // Fazer uma requisição AJAX para o arquivo pesquisa.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/devolucao.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("id=" + id);
+        }
+        historico();
+    </script>
+    <script src="scripts/header.js"></script>
+</body>
+</html>

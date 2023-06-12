@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar livros - Biblioteca</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <h1><span class="s1">Biblioteca</span><span class="s2"> Pimentas VII</span><br><span
+        class="material-symbols-outlined">
+        menu_book
+    </span></h1>
+        <div class="conteiner">
+            <form action="php/inclusao.php" method="post">
+                        <input type="text" name="nomeLivro" placeholder="Nome do livro" required>
+                        <br><br>    
+                        <input type="text" name="autor" placeholder="Autor" required>
+                        <br><br>
+                        <input list="generos" name="genero" placeholder="Gênero" required>
+                    <datalist id="generos">
+                        <option value="Literatura Infantil">
+                        <option value="Literatura Moderna">
+                        <option value="Romance">
+                        <option value="Classicos Nacionais">
+                        <option value="Estudo do Professor">
+                        <option value="Literatura Juvenil">
+                    </datalist>
+                        <br><br>
+                        <input type="number" name="qtd" placeholder="Quantidade" required>
+                        <br><br>
+                <div class="botao">
+                    <button onclick="enviarLivro()">Salvar</button>
+                </div>
+            </form>
+        </div>
+        <script src="scripts/header.js"></script>
+    </body>          
+</html>
