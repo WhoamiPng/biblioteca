@@ -6,19 +6,28 @@
          die("ERRO: " . mysqli_connect_error());
      }
  
-     $nomePessoa = $_POST["pessoa"];
+     $id = $_POST["id"];
+     $status = 'devolvido';
+     $dataDevolucao = date("Y-m-d");
 
-     $sql = "SELECT * FROM emprestimo WHERE nomepessoa='".$nomePessoa."'";
+     $sql = "SELECT * FROM emprestimo WHERE id='".$id."'";
      $result = mysqli_query($conn,$sql);
 
-     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr style='background-color:#04AA6D'>";
-            echo "<th>" . $row["id"] . "</th>";
-            echo "<th>" . $row["nomeLivro"] . "</th>";
-            echo "<th>" . $row["nomePessoa"]  .  "</th>";
-            echo "<th>" . $row["dataDevolucao"] .  "</th>";
-            echo "</tr>";
+     if (mysqli_num_rows($result) > 0) {
+        if($row = $result->fetch_assoc()){
+            $sql = "INSERT INTO devolucao (nomeLivro, nomePessoa, dataDevolucao) VALUES ('".$row['nomeLivro']."','".$row['nomePessoa']."','".$dataDevolucao."')";
+            $result = mysqli_query($conn,$sql);
+            if($result){
+                $sql = "UPDATE emprestimo SET status='devolvido' WHERE id='".$id."'";
+                $result = mysqli_query($conn,$sql);
+                if($result){
+                    echo "DEVOLVIDO COM SUCESSO"; 
+                }else{
+                    echo "ERRO";
+                }
+            }else{
+                echo "ERRO";
+            }
         }
     } else {
         echo "<li>Nenhum resultado encontrado.</li>";

@@ -18,15 +18,6 @@
 
 
     <table>
-        <thead>
-            <tr style="background-color: rgb(251, 88, 88);">
-                <th>ID</th>
-                <th>Livro</th>
-                <th>Pessoa</th>
-                <th>D.Emprestado</th>
-                <th>D.Prazo</th>
-            </tr>
-        </thead>
         <tbody id="resultados">
             
         </tbody>
@@ -53,7 +44,7 @@
             
             // Fazer uma requisição AJAX para o arquivo pesquisa.php
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "php/devolucao.php", true);
+            xhr.open("POST", "php/devolver.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
@@ -63,6 +54,22 @@
             };
             xhr.send("pessoa=" + nome);
         }
+
+        function devolver(id) {
+        
+            // Fazer uma requisição AJAX para o arquivo pesquisa.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/devolucao.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("id=" + id);
+        }
+        historico();
     </script>
     <script src="scripts/header.js"></script>
 </body>

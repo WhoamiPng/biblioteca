@@ -17,10 +17,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr style='background-color:#04AA6D'>";
-        echo "<th>" . $row["id"] . "</th>";
+        echo "<th id='id'>" . $row["id"] . "</th>";
         echo "<th>" . $row["nomeLivro"] . "</th>";
         echo "<th>" . $row["autor"]  .  "</th>";
-        echo "<th>" . $row["generos"] .  "</th>";
+        echo "<th>" . $row["genero"] .  "</th>";
         echo "<th>" . $row["qtd"] .  "</th>";
         echo "</tr>";
 

@@ -10,6 +10,7 @@
     $nomeLivro = $_POST["nomeLivro"];
     $dataEmprestimo = date("Y-m-d"); //Pega a data atual de hoje
     $dataPrazo = $_POST["data"];
+    $status = "pendente";
 
     //Verificando se o livro existe
     $sql = "SELECT * FROM livros WHERE nomelivro='".$nomeLivro."'";
@@ -17,7 +18,7 @@
 
     //Registrando os dados caso o livro exista
     if(mysqli_num_rows($result) > 0){
-        $sql = "INSERT INTO emprestimo (nomePessoa,nomeLivro,dataEmprestimo,dataPrazo) Values ('".$nomePessoa."','".$nomeLivro."','".$dataEmprestimo."','".$dataPrazo."')";
+        $sql = "INSERT INTO emprestimo (nomePessoa,nomeLivro,dataEmprestimo,dataPrazo,status) Values ('".$nomePessoa."','".$nomeLivro."','".$dataEmprestimo."','".$dataPrazo."','".$status."')";
 
         //Atualizando a quantidade de livros
         if(mysqli_query($conn,$sql)){
