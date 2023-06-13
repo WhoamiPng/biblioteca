@@ -1,14 +1,14 @@
 body {
     background-image: url(background.png);
     background-repeat: repeat;
-    background-size:cover;
+    background-size: cover;
     width: 100%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
 
-.container {
+.container-pesquisa {
     width: 90%;
     margin: auto;
     display: flex;
@@ -27,19 +27,20 @@ body {
     padding: 5px;
     border-radius: 5px;
 }
-table {
+
+.pesquisa-table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 90%;
 }
 
-td,
+.pesquisa-table td,
 th {
     border: 2px solid #000000;
     text-align: left;
     padding: 8px;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+.pesquisa-table tr:nth-child(even) {
+    background-color: rgb(111, 228, 113);
 }

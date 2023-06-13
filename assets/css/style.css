@@ -10,10 +10,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
+/* CSS Index */
 h1 {
     text-align: center;
+    font-size: 2.3rem;
     font-weight: 400;
 }
 .s1 {
@@ -22,13 +24,11 @@ h1 {
 .s2 {
     font-size: 2rem;
 }
-.conteiner { 
+.conteiner-index{
     width: 50%;
     display: flex;
     justify-content: center;
     text-align: center;
-}
-.conteiner {
     background: rgba(255, 255, 255, 0.249);
     border: 1px;
     margin: auto;
@@ -36,7 +36,7 @@ h1 {
     padding: 5%;
     border-radius: 10%;
 }
-form input {
+.formIndex input {
     padding: 2px;
     border: 2px solid #555;
     background: gainsboro;
@@ -46,10 +46,10 @@ form input {
     border-radius: 4px;
     box-shadow: 0 0 100px rgba(255, 255, 255, 0.243);
 }
-input:hover{
+.formIndex input:hover{
     background-color: rgba(238, 238, 238, 0.68);
 }
-button {
+.buttonIndex {
     background: rgba(245, 245, 245, 0.368);
     margin-left: 200px;
     border-radius: 6px;
@@ -58,7 +58,64 @@ button {
     padding: 8px;
     width: 100px;
 }
-button:hover {
+.buttonIndex:hover {
     background-color: white;
 }
+/* Fim CSS index */
 
+/* CSS da página emprestimos */
+
+.container-emprestimo {
+    width: 70%;
+    margin: auto;
+}
+
+.table-emprestimo {
+    width: 100%;
+    height: 100%;
+}
+
+/* CSS página de pesquisa */
+
+.container-pesquisa {
+    width: 100%;
+    height: 40%;
+    margin: auto 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-event {
+    padding: 7px;
+    border-radius: 6px;
+}
+.search {
+    width: 100%;
+    height: 1%;
+}
+.tableDiv {
+    width: 30%;
+    height: 50%;
+}
+#termo {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.pesquisa-table table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pesquisa-table th {
+    border: 2px solid #000000;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px 70px;
+}
+
+.pesquisa-table tr:nth-child(even) {
+    background-color: rgb(111, 228, 113);
+}

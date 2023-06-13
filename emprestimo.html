@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emprestimo de livros</title>
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/emprestimo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
         <div id="headerContainer"></div>
     </header>
-    <div class="container">
+    <div class="container-emprestimo">
         <form action="php/emprestimo.php" method="post">
             <label>Nome do comodato:</label><br>
             <input type="text" name="pessoa" id="pessoa" required><br>
@@ -24,7 +24,7 @@
             <input type="date" name="data" id="data" required><br>
             <input type="submit" value="Salvar">
         </form>
-        <table>
+        <table class="table-emprestimo">
             <thead>
                 <tr style="background-color: rgb(251, 88, 88);">
                     <th>ID</th>

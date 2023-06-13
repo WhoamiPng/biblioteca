@@ -21,8 +21,8 @@
         class="material-symbols-outlined">
         menu_book
     </span></h1>
-        <div class="conteiner">
-            <form action="php/inclusao.php" method="post">
+        <div class="conteiner-index">
+            <form  class="formIndex" action="php/inclusao.php" method="post">
                         <input type="text" name="nomeLivro" placeholder="Nome do livro" required>
                         <br><br>    
                         <input type="text" name="autor" placeholder="Autor" required>
@@ -40,7 +40,7 @@
                         <input type="number" name="qtd" placeholder="Quantidade" required>
                         <br><br>
                 <div class="botao">
-                    <button onclick="enviarLivro()">Salvar</button>
+                    <button class="buttonIndex" onclick="enviarLivro()">Salvar</button>
                 </div>
             </form>
         </div>

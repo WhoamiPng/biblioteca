@@ -8,7 +8,7 @@
 
     $nomePessoa = $_POST["pessoa"];
     $nomeLivro = $_POST["nomeLivro"];
-    $dataEmprestimo = date("Y-m-d"); //Pega a data atual de hoje
+    $dataEmprestimo = date("d-m-y"); //Pega a data atual de hoje
     $dataPrazo = $_POST["data"];
     $status = "pendente";
 
@@ -25,7 +25,7 @@
             $sql = "UPDATE livros SET qtd= qtd-1 WHERE nomeLivro='".$nomeLivro."'";
 
             if(mysqli_query($conn,$sql)){
-                echo "<p style='font-size:40px'>Livro não existe, redirecionando para página inicial em 5 segundos</p>";
+                echo "<p style='font-size:40px'>Livro emprestado com sucesso redirecionando para página inicial em 5 segundos</p>";
                 header("Refresh: 5; URL= ../emprestimo.html");
             }else{
                 echo "<p style='font-size:40px'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";

@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="teste.css">
+<body>
+    
+</body>
+</html>
+
 <?php
 // Conexão com o banco de dados
 include 'conn.php';
@@ -16,7 +23,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<tr style='background-color:#04AA6D'>";
+        echo "<tr>";
         echo "<th>" . $row["id"] . "</th>";
         echo "<th>" . $row["nomeLivro"] . "</th>";
         echo "<th>" . $row["autor"]  .  "</th>";

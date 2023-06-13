@@ -8,7 +8,7 @@
  
      $id = $_POST["id"];
      $status = 'devolvido';
-     $dataDevolucao = date("Y-m-d");
+     $dataDevolucao = date("d-m-Y");
 
      $sql = "SELECT * FROM emprestimo WHERE id='".$id."'";
      $result = mysqli_query($conn,$sql);
