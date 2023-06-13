@@ -21,7 +21,11 @@
                 $sql = "UPDATE emprestimo SET status='devolvido' WHERE id='".$id."'";
                 $result = mysqli_query($conn,$sql);
                 if($result){
-                    echo "DEVOLVIDO COM SUCESSO"; 
+                    $sql = "UPDATE livros SET qtd= qtd+1 WHERE nomeLivro='".$row['nomeLivro']."'";
+                    $result = mysqli_query($conn,$sql);
+                    if($result){
+                        echo "SUCESSO";
+                    }
                 }else{
                     echo "ERRO";
                 }

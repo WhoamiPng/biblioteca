@@ -42,7 +42,7 @@ if($termo == "emprestimo"){
 // AINDA A SER FEITO E IMPLEMENTADO
 
 if($termo == "devolucao"){
-    $sql = "SELECT * FROM emprestimo WHERE status LIKE 'devolvido' ORDER BY dataEmprestimo DESC";
+    $sql = "SELECT * FROM emprestimo ORDER BY status DESC";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "<table border='1px solid black' style='width: 100%; height: 100%'>";
