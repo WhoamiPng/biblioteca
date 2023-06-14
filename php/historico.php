@@ -24,7 +24,7 @@ if($termo == "emprestimo"){
         echo "<th>Status</th>";
         echo "</tr>";
         while ($row = $result->fetch_assoc()) {
-            echo "<tr style='background-color:#04AA6D'>";
+            echo "<tr class='historico-table' style='background-color:tomato; height: 100%'>";
             echo "<td>" . $row["id"] . "</td>";
             echo "<td>" . $row["nomeLivro"] . "</td>";
             echo "<td>" . $row["nomePessoa"]  .  "</td>";

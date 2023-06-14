@@ -17,26 +17,16 @@
     <div class="container-emprestimo">
         <form action="php/emprestimo.php" method="post">
             <label>Nome do comodato:</label><br>
-            <input type="text" name="pessoa" id="pessoa" required size="60" placeholder="insira o nome do comodato"><br>
+            <input type="text" name="pessoa" id="pessoa" required size="60" placeholder="insira o nome do comodato"><br><br>
             <label>Nome do Livro:</label><br>
-            <input type="text" name="nomeLivro" id="nomeLivro" required placeholder="Insira o nome do Livro"><br>
+            <input type="text" name="nomeLivro" id="nomeLivro" required size="60" placeholder="Insira o nome do Livro"><br><br>
             <label>Prazo de entrega:</label><br>
-            <input type="date" name="data" id="data" required placeholder="Defina uma data para entrega"><br>
+            <input type="date" name="data" id="data" size="" required placeholder="Defina uma data para entrega"><br>
             <input type="submit" value="Salvar">
         </form>
         <table class="table-emprestimo">
-            <thead>
-                <tr style="background-color: rgb(251, 88, 88);">
-                    <th>ID</th>
-                    <th>Livro</th>
-                    <th>Pessoa</th>
-                    <th>Data Emprestado</th>
-                    <th>Data Prazo</th>
-                </tr>
-            </thead>
-            <tbody id="resultados">
-
-            </tbody>
+            <thead></thead>
+            <tbody id="resultados"></tbody>
         </table>
     </div>
     <script>

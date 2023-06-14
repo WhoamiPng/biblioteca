@@ -13,7 +13,7 @@
 
      if ($result->num_rows > 0) {
         echo "<table border='1px solid black' style='width: 100%; height: 100%'>";
-        echo "<tr style='background-color:#04AA6D'>";
+        echo "<tr style='background-color:#04AA6D; border='1px solid black'>";
         echo "<th style='font-size:20px'>ID</th>";
         echo "<th style='font-size:20px' >Nome do Livro</th>";
         echo "<th style='font-size:20px'>Acomodato</th>";
