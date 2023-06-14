@@ -17,11 +17,11 @@
     <div class="container-emprestimo">
         <form action="php/emprestimo.php" method="post">
             <label>Nome do comodato:</label><br>
-            <input type="text" name="pessoa" id="pessoa" required><br>
+            <input type="text" name="pessoa" id="pessoa" required size="60" placeholder="insira o nome do comodato"><br>
             <label>Nome do Livro:</label><br>
-            <input type="text" name="nomeLivro" id="nomeLivro" required><br>
+            <input type="text" name="nomeLivro" id="nomeLivro" required placeholder="Insira o nome do Livro"><br>
             <label>Prazo de entrega:</label><br>
-            <input type="date" name="data" id="data" required><br>
+            <input type="date" name="data" id="data" required placeholder="Defina uma data para entrega"><br>
             <input type="submit" value="Salvar">
         </form>
         <table class="table-emprestimo">
