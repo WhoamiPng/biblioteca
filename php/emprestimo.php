@@ -8,8 +8,7 @@
 
     $nomePessoa = $_POST["pessoa"];
     $nomeLivro = $_POST["nomeLivro"];
-    $serie = $_POST['serie'];
-    $dataEmprestimo = date("Y-m-d"); //Pega a data atual de hoje
+    $dataEmprestimo = date("d-m-y"); //Pega a data atual de hoje
     $dataPrazo = $_POST["data"];
     $status = "pendente";
 
@@ -18,24 +17,26 @@
     $result = mysqli_query($conn,$sql);
 
     //Registrando os dados caso o livro exista
-    if(mysqli_num_rows($result) >= 1){
-        $sql = "INSERT INTO emprestimo (nomePessoa,nomeLivro,serie,dataEmprestimo,dataPrazo,status) Values ('".$nomePessoa."','".$nomeLivro."','".$serie."','".$dataEmprestimo."','".$dataPrazo."','".$status."')";
+    if(mysqli_num_rows($result) > 0){
+        $sql = "INSERT INTO emprestimo (nomePessoa,nomeLivro,dataEmprestimo,dataPrazo,status) Values ('".$nomePessoa."','".$nomeLivro."','".$dataEmprestimo."','".$dataPrazo."','".$status."')";
 
         //Atualizando a quantidade de livros
         if(mysqli_query($conn,$sql)){
-            $sql = "UPDATE livros SET qtd= qtd -1 WHERE nomeLivro='".$nomeLivro."'";
+            $sql = "UPDATE livros SET qtd= qtd-1 WHERE nomeLivro='".$nomeLivro."'";
 
             if(mysqli_query($conn,$sql)){
-                echo "<script>alert(' Livro emprestado com sucesso, clique em ok para voltar à página de emprestimos'); window.location.href='https://bibliotecapimentas7.000webhostapp.com/emprestimo.html' </script>";
+                echo "<p style='font-size:40px'>Livro emprestado com sucesso redirecionando para página inicial em 5 segundos</p>";
+                header("Refresh: 5; URL= ../emprestimo.html");
             }else{
                 echo "<p style='font-size:40px'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
-                header("Refresh: 5; URL= https://bibliotecapimentas7.000webhostapp.com/emprestimo.html");
+                header("Refresh: 5; URL= ../emprestimo.html");
             }
         }else{
             echo "<p style='font-size:40px'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
-            header("Refresh: 5; URL= https://bibliotecapimentas7.000webhostapp.com//emprestimo.html");
+            header("Refresh: 5; URL= ../emprestimo.html");
         }
     }else{
-        echo "<script>alert('O Livro digitado, não existe, clique em ok, para voltar para à página de emprestimos'); window.location.href='https://bibliotecapimentas7.000webhostapp.com/emprestimo.html' </script>";
+        echo "<p style='font-size:40px'>Livro não existe, redirecionando para página inicial em 5 segundos</p>";
+        header("Refresh: 5; URL= ../emprestimo.html");
     }
 ?>

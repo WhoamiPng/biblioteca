@@ -1,6 +1,6 @@
 .container-navbar {
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
 
 .navbar {
@@ -9,7 +9,6 @@
     margin: auto;
     display:flex;
     margin-top: 2%;
-    margin-bottom: 5%;
     justify-content: center;
 }
 .list-itens {
