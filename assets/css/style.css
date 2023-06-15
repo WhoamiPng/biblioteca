@@ -47,7 +47,7 @@ h1 {
     box-shadow: 0 0 100px rgba(255, 255, 255, 0.243);
 }
 .formIndex input:hover{
-    background-color: rgba(238, 238, 238, 0.68);
+    background-color: rgba(196, 196, 196, 0.68);
 }
 .buttonIndex {
     background: rgba(245, 245, 245, 0.368);
@@ -91,7 +91,7 @@ h1 {
     box-shadow: 0 0 5px black;
 }
 .container-emprestimo input:hover {
-    color:aliceblue; 
+    color:rgb(7, 139, 255); 
     transition: 500ms;
 }
 .container-emprestimo button {
@@ -186,4 +186,16 @@ h1 {
 .sbDv button:hover {
     background-color: rgb(36, 250, 36);
     transition: 500ms;
+}
+
+tr, td{
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+th {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid black;
 }

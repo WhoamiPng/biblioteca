@@ -21,8 +21,7 @@ try {
     $stmt->bindParam(':qtd', $qtd);
     $stmt->execute();
 
-    echo "<p style='font-size:40px'>Livro salvo com sucesso, redirecionando para página inicial em 5 segundos</p>";
-    header("Refresh: 5; URL= ../index.html");
+    echo "<script>alert('Livro salvo com sucesso, clique em Ok para redirecionar para página inicial'); window.location.href='https://bibliotecapimentas7.000webhostapp.com/index.html' </script>";
 } catch (PDOException $e) {
     echo "Erro ao enviar informações: " . $e->getMessage();
 }
