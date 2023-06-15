@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprestimo de livros</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <div class="container-emprestimo">
+        <form action="php/emprestimo.php" method="post">
+            <label>Nome do comodato:</label><br>
+            <input type="text" name="pessoa" id="pessoa" required size="60" placeholder="insira o nome do comodato"><br><br>
+            <label>Nome do Livro:</label><br>
+            <input type="text" name="nomeLivro" id="nomeLivro" required size="60" placeholder="Insira o nome do Livro"><br><br>
+            <label>Série do comodato</label><br>
+            <input type="text" name="serie" id="serie" required size="60" placeholder="Insira a série, ex:'3D' não utilize espaços entre números e letras "><br><br>
+            <label>Prazo de entrega:</label><br>
+            <input type="date" name="data" id="data" size="" required placeholder="Defina uma data para entrega"><br>
+            <input style="padding: 5px;" type="submit" value="Salvar">
+        </form>
+        <br>
+        <table class="table-emprestimo">
+            <p>Livros emprestados ("se não tiver nenhum, exibirá ")</p>
+            <br>
+            <thead></thead>
+            <tbody id="resultados"></tbody>
+        </table>
+    </div>
+    <script>
+        function historico() {
+            var termo = 'emprestimo';
+
+            // Fazer uma requisição AJAX para o arquivo pesquisa.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/historico.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Atualizar a lista de resultados
+                    document.getElementById("resultados").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("termo=" + termo);
+        }
+        historico();
+    </script>
+    <script src="scripts/header.js"></script>
+</body>
+
+</html>
